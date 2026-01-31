@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的视频作品集</title>
+    <style>
+        /* 全局样式：简单美观，适配手机/电脑 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "微软雅黑", sans-serif;
+        }
+        body {
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .header h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .header p {
+            color: #666;
+            font-size: 16px;
+        }
+        /* 视频卡片容器 */
+        .video-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        /* 视频卡片样式 */
+        .video-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+        /* 视频封面/播放区域 */
+        .video-wrapper {
+            width: 100%;
+            height: 200px;
+            position: relative;
+            background: #000;
+        }
+        .video-wrapper video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* 视频信息 */
+        .video-info {
+            padding: 15px;
+        }
+        .video-title {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        .video-desc {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+        /* 响应式适配手机 */
+        @media (max-width: 768px) {
+            .video-container {
+                grid-template-columns: 1fr;
+            }
+            .video-wrapper {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部标题 -->
+    <div class="header">
+        <h1>我的视频作品集</h1>
+        <p>记录每一个精彩瞬间</p>
+    </div>
+
+    <!-- 视频列表容器 -->
+    <div class="video-container">
+        <!-- 视频卡片1：替换成你的视频信息 -->
+        <div class="video-card">
+            <div class="video-wrapper">
+                <!-- 本地视频：把 src 换成你的视频文件路径（如 ./videos/1.mp4） -->
+                <!-- 在线视频：直接填视频链接（如 https://xxx.mp4） -->
+                <video controls poster="./cover1.jpg">
+                    <source src="./videos/video1.mp4" type="video/mp4">
+                    你的浏览器不支持视频播放
+                </video>
+            </div>
+            <div class="video-info">
+                <h3 class="video-title">视频标题1</h3>
+                <p class="video-desc">这是第一个视频的简介，简单描述视频内容～</p>
+            </div>
+        </div>
+
+        <!-- 视频卡片2：复制可新增视频 -->
+        <div class="video-card">
+            <div class="video-wrapper">
+                <video controls poster="./cover2.jpg">
+                    <source src="./videos/video2.mp4" type="video/mp4">
+                    你的浏览器不支持视频播放
+                </video>
+            </div>
+            <div class="video-info">
+                <h3 class="video-title">视频标题2</h3>
+                <p class="video-desc">这是第二个视频的简介，比如旅行vlog、作品展示等～</p>
+            </div>
+        </div>
+
+        <!-- 新增视频：复制上面的 .video-card 块，改内容即可 -->
+        <!-- 
+        <div class="video-card">
+            <div class="video-wrapper">
+                <video controls poster="./cover3.jpg">
+                    <source src="./videos/video3.mp4" type="video/mp4">
+                    你的浏览器不支持视频播放
+                </video>
+            </div>
+            <div class="video-info">
+                <h3 class="video-title">视频标题3</h3>
+                <p class="video-desc">第三个视频的简介～</p>
+            </div>
+        </div>
+        -->
+    </div>
+</body>
+</html>
