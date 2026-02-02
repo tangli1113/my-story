@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>专业视频剪辑 | 专业视频剪辑服务</title>
-    <!-- 引入外部资源 -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     
-    <!-- 自定义配置 -->
     <script>
         tailwind.config = {
             theme: {
@@ -28,7 +26,6 @@
         }
     </script>
     
-    <!-- 自定义样式 -->
     <style type="text/tailwindcss">
         @layer utilities {
             .content-auto {
@@ -45,6 +42,9 @@
             }
             .btn-secondary {
                 @apply bg-white text-primary border border-primary px-6 py-3 rounded-lg hover:bg-primary/5 transition-all duration-200;
+            }
+            .video-item-hover {
+                @apply transition-all duration-200 hover:bg-primary/5 cursor-pointer;
             }
         }
     </style>
@@ -130,12 +130,12 @@
         </div>
     </section>
 
-    <!-- 作品集区域 -->
+    <!-- 作品集区域 - 升级为栏目分类 -->
     <section id="portfolio" class="py-20 bg-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-bold text-dark mb-4">我的剪辑作品</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">每一个作品都凝聚着我的专业和创意，点击预览可查看完整视频效果</p>
+                <p class="text-gray-600 max-w-2xl mx-auto">每个栏目下包含多部作品，点击查看详情浏览完整列表</p>
             </div>
             
             <div class="flex flex-wrap justify-center gap-4 mb-10">
@@ -147,24 +147,25 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- 作品1 - 产品宣传短片 -->
+                <!-- 栏目1：短视频（包含10部作品） -->
                 <div class="video-card video-card-hover bg-white rounded-xl overflow-hidden shadow-md" data-category="short">
                     <div class="relative">
-                        <img src="https://picsum.photos/600/400?random=2" alt="产品宣传短片" class="w-full h-60 object-cover">
+                        <img src="https://picsum.photos/600/400?random=2" alt="短视频合集" class="w-full h-60 object-cover">
                         <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
-                            <button onclick="openVideoModal('product-promotion.mp4', '产品宣传短片')" 
+                            <button onclick="openVideoListModal('short')" 
                                     class="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
-                                <i class="fa fa-play text-2xl"></i>
+                                <i class="fa fa-th-list text-2xl"></i>
                             </button>
                         </div>
                         <span class="absolute top-4 left-4 bg-primary text-white text-sm px-3 py-1 rounded-full">短视频</span>
+                        <span class="absolute top-4 right-4 bg-red-500 text-white text-sm px-3 py-1 rounded-full">10部作品</span>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">产品宣传短片</h3>
-                        <p class="text-gray-600 mb-4">根据地产项目的价值观制作的项目宣传短视频，突出产品卖点</p>
+                        <h3 class="text-xl font-semibold mb-2">短视频合集</h3>
+                        <p class="text-gray-600 mb-4">包含10部不同风格的短视频剪辑作品，涵盖产品宣传、品牌引流等</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-sm text-gray-500"><i class="fa fa-clock-o mr-1"></i>00:15</span>
-                            <a href="#" onclick="openVideoModal('product-promotion.mp4', '产品宣传短片'); return false;" 
+                            <span class="text-sm text-gray-500"><i class="fa fa-film mr-1"></i>10部作品</span>
+                            <a href="#" onclick="openVideoListModal('short'); return false;" 
                                class="text-primary hover:text-primary/80 font-medium">
                                 查看详情 <i class="fa fa-arrow-right ml-1"></i>
                             </a>
@@ -172,24 +173,25 @@
                     </div>
                 </div>
                 
-                <!-- 作品2 - 产品宣传形象片 -->
+                <!-- 栏目2：商业广告（形象片3部+概念片5部） -->
                 <div class="video-card video-card-hover bg-white rounded-xl overflow-hidden shadow-md" data-category="commercial">
                     <div class="relative">
-                        <img src="https://picsum.photos/600/400?random=3" alt="产品宣传形象片" class="w-full h-60 object-cover">
+                        <img src="https://picsum.photos/600/400?random=3" alt="商业广告合集" class="w-full h-60 object-cover">
                         <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
-                            <button onclick="openVideoModal('brand-promotion.mp4', '产品宣传形象片')" 
+                            <button onclick="openVideoListModal('commercial')" 
                                     class="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
-                                <i class="fa fa-play text-2xl"></i>
+                                <i class="fa fa-th-list text-2xl"></i>
                             </button>
                         </div>
                         <span class="absolute top-4 left-4 bg-accent text-white text-sm px-3 py-1 rounded-full">商业广告</span>
+                        <span class="absolute top-4 right-4 bg-red-500 text-white text-sm px-3 py-1 rounded-full">8部作品</span>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">产品宣传形象片</h3>
-                        <p class="text-gray-600 mb-4">为地产项目品牌制作的宣传广告，提升品牌形象</p>
+                        <h3 class="text-xl font-semibold mb-2">商业广告合集</h3>
+                        <p class="text-gray-600 mb-4">包含3部形象片+5部概念片，为各类品牌提供专业广告剪辑服务</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-sm text-gray-500"><i class="fa fa-clock-o mr-1"></i>01:00</span>
-                            <a href="#" onclick="openVideoModal('brand-promotion.mp4', '产品宣传形象片'); return false;" 
+                            <span class="text-sm text-gray-500"><i class="fa fa-film mr-1"></i>8部作品</span>
+                            <a href="#" onclick="openVideoListModal('commercial'); return false;" 
                                class="text-primary hover:text-primary/80 font-medium">
                                 查看详情 <i class="fa fa-arrow-right ml-1"></i>
                             </a>
@@ -197,24 +199,25 @@
                     </div>
                 </div>
                 
-                <!-- 作品3 - 产品宣传概念片 -->
-                <div class="video-card video-card-hover bg-white rounded-xl overflow-hidden shadow-md" data-category="short">
+                <!-- 栏目3：婚礼影像（多部作品） -->
+                <div class="video-card video-card-hover bg-white rounded-xl overflow-hidden shadow-md" data-category="wedding">
                     <div class="relative">
-                        <img src="https://picsum.photos/600/400?random=6" alt="产品宣传概念片" class="w-full h-60 object-cover">
+                        <img src="https://picsum.photos/600/400?random=4" alt="婚礼影像合集" class="w-full h-60 object-cover">
                         <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
-                            <button onclick="openVideoModal('concept-promotion.mp4', '产品宣传概念片')" 
+                            <button onclick="openVideoListModal('wedding')" 
                                     class="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
-                                <i class="fa fa-play text-2xl"></i>
+                                <i class="fa fa-th-list text-2xl"></i>
                             </button>
                         </div>
-                        <span class="absolute top-4 left-4 bg-primary text-white text-sm px-3 py-1 rounded-full">短视频</span>
+                        <span class="absolute top-4 left-4 bg-pink-500 text-white text-sm px-3 py-1 rounded-full">婚礼影像</span>
+                        <span class="absolute top-4 right-4 bg-red-500 text-white text-sm px-3 py-1 rounded-full">6部作品</span>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">产品宣传概念片</h3>
-                        <p class="text-gray-600 mb-4">产品宣传概念片剪辑，30秒创意展示，提升产品吸引力</p>
+                        <h3 class="text-xl font-semibold mb-2">婚礼影像合集</h3>
+                        <p class="text-gray-600 mb-4">包含6部婚礼精剪短片，记录新人的美好瞬间</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-sm text-gray-500"><i class="fa fa-clock-o mr-1"></i>00:30</span>
-                            <a href="#" onclick="openVideoModal('concept-promotion.mp4', '产品宣传概念片'); return false;" 
+                            <span class="text-sm text-gray-500"><i class="fa fa-film mr-1"></i>6部作品</span>
+                            <a href="#" onclick="openVideoListModal('wedding'); return false;" 
                                class="text-primary hover:text-primary/80 font-medium">
                                 查看详情 <i class="fa fa-arrow-right ml-1"></i>
                             </a>
@@ -222,74 +225,25 @@
                     </div>
                 </div>
                 
-                <!-- 作品4 - 采访专栏（你的BV号） -->
+                <!-- 栏目4：采访专栏（B站视频） -->
                 <div class="video-card video-card-hover bg-white rounded-xl overflow-hidden shadow-md" data-category="documentary">
                     <div class="relative">
                         <img src="https://picsum.photos/600/400?random=10" alt="采访专栏" class="w-full h-60 object-cover">
                         <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
-                            <button onclick="openBilibiliVideo('BV16JFMzrE7E', '采访专栏')" 
+                            <button onclick="openVideoListModal('documentary')" 
                                     class="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
-                                <i class="fa fa-play text-2xl"></i>
+                                <i class="fa fa-th-list text-2xl"></i>
                             </button>
                         </div>
                         <span class="absolute top-4 left-4 bg-green-500 text-white text-sm px-3 py-1 rounded-full">采访专栏</span>
+                        <span class="absolute top-4 right-4 bg-red-500 text-white text-sm px-3 py-1 rounded-full">4部作品</span>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">采访专栏</h3>
-                        <p class="text-gray-600 mb-4">针对地产项目的特点来进行人物采访，展现项目品牌实力</p>
+                        <h3 class="text-xl font-semibold mb-2">采访专栏合集</h3>
+                        <p class="text-gray-600 mb-4">包含4部人物采访视频，展现不同项目的品牌实力</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-sm text-gray-500"><i class="fa fa-clock-o mr-1"></i>15:00</span>
-                            <a href="#" onclick="openBilibiliVideo('BV16JFMzrE7E', '采访专栏'); return false;" 
-                               class="text-primary hover:text-primary/80 font-medium">
-                                查看详情 <i class="fa fa-arrow-right ml-1"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 作品5 - 产品品牌宣传片 -->
-                <div class="video-card video-card-hover bg-white rounded-xl overflow-hidden shadow-md" data-category="commercial">
-                    <div class="relative">
-                        <img src="https://picsum.photos/600/400?random=7" alt="产品品牌宣传片" class="w-full h-60 object-cover">
-                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
-                            <button onclick="openVideoModal('enterprise-brand.mp4', '产品品牌宣传片')" 
-                                    class="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
-                                <i class="fa fa-play text-2xl"></i>
-                            </button>
-                        </div>
-                        <span class="absolute top-4 left-4 bg-accent text-white text-sm px-3 py-1 rounded-full">商业广告</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">产品品牌宣传片</h3>
-                        <p class="text-gray-600 mb-4">企业形象宣传片剪辑，时长3分钟，展示企业文化</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-sm text-gray-500"><i class="fa fa-clock-o mr-1"></i>03:00</span>
-                            <a href="#" onclick="openVideoModal('enterprise-brand.mp4', '产品品牌宣传片'); return false;" 
-                               class="text-primary hover:text-primary/80 font-medium">
-                                查看详情 <i class="fa fa-arrow-right ml-1"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 作品6 - 婚礼精剪短片 -->
-                <div class="video-card video-card-hover bg-white rounded-xl overflow-hidden shadow-md" data-category="wedding">
-                    <div class="relative">
-                        <img src="https://picsum.photos/600/400?random=4" alt="婚礼精剪短片" class="w-full h-60 object-cover">
-                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
-                            <button onclick="openVideoModal('wedding-highlights.mp4', '婚礼精剪短片')" 
-                                    class="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
-                                <i class="fa fa-play text-2xl"></i>
-                            </button>
-                        </div>
-                        <span class="absolute top-4 left-4 bg-pink-500 text-white text-sm px-3 py-1 rounded-full">婚礼影像</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">婚礼精剪短片</h3>
-                        <p class="text-gray-600 mb-4">婚礼全程跟拍精剪，记录美好瞬间，时长5分钟</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-sm text-gray-500"><i class="fa fa-clock-o mr-1"></i>05:00</span>
-                            <a href="#" onclick="openVideoModal('wedding-highlights.mp4', '婚礼精剪短片'); return false;" 
+                            <span class="text-sm text-gray-500"><i class="fa fa-film mr-1"></i>4部作品</span>
+                            <a href="#" onclick="openVideoListModal('documentary'); return false;" 
                                class="text-primary hover:text-primary/80 font-medium">
                                 查看详情 <i class="fa fa-arrow-right ml-1"></i>
                             </a>
@@ -300,7 +254,7 @@
             
             <div class="text-center mt-12">
                 <button class="btn-secondary">
-                    <i class="fa fa-refresh mr-2"></i>加载更多作品
+                    <i class="fa fa-refresh mr-2"></i>加载更多栏目
                 </button>
             </div>
         </div>
@@ -490,6 +444,24 @@
         <i class="fa fa-arrow-up"></i>
     </button>
 
+    <!-- 新增：视频列表模态框 -->
+    <div id="videoListModal" class="fixed inset-0 bg-black/90 flex items-center justify-center z-50 hidden">
+        <div class="relative w-full max-w-3xl px-4">
+            <button onclick="closeVideoListModal()" class="absolute -top-16 right-4 text-white text-3xl hover:text-primary transition-colors">
+                <i class="fa fa-times"></i>
+            </button>
+            <div class="bg-white rounded-xl overflow-hidden">
+                <h3 id="listModalTitle" class="text-dark p-4 text-xl font-semibold bg-light border-b border-gray-200 flex items-center justify-between">
+                    <span>视频列表</span>
+                    <span class="text-sm text-gray-500" id="videoCount"></span>
+                </h3>
+                <div id="videoListContainer" class="p-6 max-h-[70vh] overflow-y-auto">
+                    <!-- 视频列表会通过JS动态生成 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- 视频播放模态框 -->
     <div id="videoModal" class="fixed inset-0 bg-black/90 flex items-center justify-center z-50 hidden">
         <div class="relative w-full max-w-4xl px-4">
@@ -509,13 +481,54 @@
 
     <!-- JavaScript -->
     <script>
-        // 配置你的GitHub信息（替换为你自己的）
+        // 1. 配置你的GitHub信息（替换为自己的）
         const GITHUB_CONFIG = {
-            username: "你的GitHub用户名",  // 例如：username123
-            repoName: "你的仓库名",         // 例如：video-portfolio
-            branch: "main"                 // 分支名，通常是main或master
+            username: "你的GitHub用户名",
+            repoName: "你的仓库名",
+            branch: "main"
         };
-        
+
+        // 2. 配置你的视频列表（核心！在这里添加所有视频）
+        // 格式：{ title: '视频标题', file: 'GitHub上的文件名.mp4', type: '栏目类型' }
+        // B站视频格式：{ title: '视频标题', bv: 'BV号', type: '栏目类型' }
+        const VIDEO_LIBRARY = [
+            // ========== 短视频栏目（10部） ==========
+            { title: "短视频-产品引流片01", file: "short-product-01.mp4", type: "short" },
+            { title: "短视频-品牌宣传片02", file: "short-brand-02.mp4", type: "short" },
+            { title: "短视频-活动推广片03", file: "short-event-03.mp4", type: "short" },
+            { title: "短视频-产品功能片04", file: "short-function-04.mp4", type: "short" },
+            { title: "短视频-用户证言片05", file: "short-testimonial-05.mp4", type: "short" },
+            { title: "短视频-节日营销片06", file: "short-festival-06.mp4", type: "short" },
+            { title: "短视频-创意短片07", file: "short-creative-07.mp4", type: "short" },
+            { title: "短视频-教程剪辑08", file: "short-tutorial-08.mp4", type: "short" },
+            { title: "短视频-探店短片09", file: "short-store-09.mp4", type: "short" },
+            { title: "短视频-花絮剪辑10", file: "short-bts-10.mp4", type: "short" },
+
+            // ========== 商业广告栏目（3部形象片+5部概念片=8部） ==========
+            { title: "形象片-品牌主形象01", file: "commercial-image-01.mp4", type: "commercial" },
+            { title: "形象片-产品形象片02", file: "commercial-image-02.mp4", type: "commercial" },
+            { title: "形象片-企业形象片03", file: "commercial-image-03.mp4", type: "commercial" },
+            { title: "概念片-未来科技概念01", file: "commercial-concept-01.mp4", type: "commercial" },
+            { title: "概念片-生活方式概念02", file: "commercial-concept-02.mp4", type: "commercial" },
+            { title: "概念片-环保理念概念03", file: "commercial-concept-03.mp4", type: "commercial" },
+            { title: "概念片-轻奢风格概念04", file: "commercial-concept-04.mp4", type: "commercial" },
+            { title: "概念片-国潮文化概念05", file: "commercial-concept-05.mp4", type: "commercial" },
+
+            // ========== 婚礼影像栏目（6部） ==========
+            { title: "婚礼-浪漫森系婚礼01", file: "wedding-forest-01.mp4", type: "wedding" },
+            { title: "婚礼-中式传统婚礼02", file: "wedding-chinese-02.mp4", type: "wedding" },
+            { title: "婚礼-海边婚礼短片03", file: "wedding-sea-03.mp4", type: "wedding" },
+            { title: "婚礼-草坪婚礼精剪04", file: "wedding-lawn-04.mp4", type: "wedding" },
+            { title: "婚礼-室内婚礼集锦05", file: "wedding-indoor-05.mp4", type: "wedding" },
+            { title: "婚礼-求婚惊喜短片06", file: "wedding-proposal-06.mp4", type: "wedding" },
+
+            // ========== 采访专栏栏目（4部B站视频） ==========
+            { title: "采访-地产项目总专访01", bv: "BV16JFMzrE7E", type: "documentary" },
+            { title: "采访-设计师专访02", bv: "BVxxxxxxxxx2", type: "documentary" },
+            { title: "采访-业主证言专访03", bv: "BVxxxxxxxxx3", type: "documentary" },
+            { title: "采访-行业专家访谈04", bv: "BVxxxxxxxxx4", type: "documentary" }
+        ];
+
         // 移动端菜单切换
         const menuBtn = document.getElementById('menuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
@@ -612,26 +625,82 @@
             });
         });
 
-        // 视频模态框控制
+        // ========== 新增：视频列表模态框功能 ==========
+        const videoListModal = document.getElementById('videoListModal');
+        const listModalTitle = document.getElementById('listModalTitle');
+        const videoListContainer = document.getElementById('videoListContainer');
+        const videoCount = document.getElementById('videoCount');
+
+        // 打开视频列表
+        function openVideoListModal(category) {
+            // 根据栏目类型筛选视频
+            const filteredVideos = VIDEO_LIBRARY.filter(video => video.type === category);
+            
+            // 设置标题
+            const categoryTitles = {
+                'short': '短视频合集',
+                'commercial': '商业广告合集',
+                'wedding': '婚礼影像合集',
+                'documentary': '采访专栏合集'
+            };
+            listModalTitle.textContent = categoryTitles[category];
+            videoCount.textContent = `共 ${filteredVideos.length} 部作品`;
+            
+            // 生成视频列表HTML
+            let listHTML = '';
+            filteredVideos.forEach((video, index) => {
+                listHTML += `
+                    <div class="video-item-hover p-4 border border-gray-100 rounded-lg mb-3 flex items-center justify-between" 
+                         onclick="${video.bv ? `openBilibiliVideo('${video.bv}', '${video.title}')` : `openVideoModal('${video.file}', '${video.title}')`}">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mr-4">
+                                <i class="fa fa-play-circle"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-dark">${index + 1}. ${video.title}</h4>
+                                <p class="text-sm text-gray-500">${video.bv ? 'B站视频' : '本地视频'}</p>
+                            </div>
+                        </div>
+                        <i class="fa fa-angle-right text-gray-400"></i>
+                    </div>
+                `;
+            });
+            videoListContainer.innerHTML = listHTML;
+            
+            // 显示模态框
+            videoListModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // 关闭视频列表
+        function closeVideoListModal() {
+            videoListModal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        // 点击背景关闭列表
+        videoListModal.addEventListener('click', (e) => {
+            if (e.target === videoListModal) {
+                closeVideoListModal();
+            }
+        });
+
+        // ========== 视频播放模态框功能 ==========
         const videoModal = document.getElementById('videoModal');
         const modalVideoTitle = document.getElementById('modalVideoTitle');
         const videoPlayerContainer = document.getElementById('videoPlayerContainer');
 
-        // 播放本地视频（GitHub上的视频文件）
+        // 播放本地视频（GitHub）
         function openVideoModal(videoFileName, title) {
             modalVideoTitle.textContent = title;
-            
-            // 构建GitHub Raw URL
             const videoUrl = `https://raw.githubusercontent.com/${GITHUB_CONFIG.username}/${GITHUB_CONFIG.repoName}/${GITHUB_CONFIG.branch}/${videoFileName}`;
             
-            // 设置视频播放器
             videoPlayerContainer.innerHTML = `
                 <div class="w-full h-full relative">
                     <video id="modalVideoPlayer" class="w-full h-full" controls autoplay>
                         <source src="${videoUrl}" type="video/mp4">
                         您的浏览器不支持HTML5视频播放
                     </video>
-                    <!-- 加载提示 -->
                     <div id="videoLoadingHint" class="absolute inset-0 bg-black/70 flex items-center justify-center text-white z-10">
                         <div class="text-center">
                             <i class="fa fa-spinner fa-spin text-4xl mb-4"></i>
@@ -642,30 +711,21 @@
             `;
             
             videoModal.classList.remove('hidden');
+            closeVideoListModal(); // 关闭列表模态框
             document.body.style.overflow = 'hidden';
             
-            // 监听视频加载状态
+            // 监听视频加载
             const videoPlayer = document.getElementById('modalVideoPlayer');
             const loadingHint = document.getElementById('videoLoadingHint');
             
-            // 视频加载成功
-            videoPlayer.onloadeddata = function() {
-                loadingHint.style.display = 'none';
-            };
-            
-            // 视频加载失败
-            videoPlayer.onerror = function() {
+            videoPlayer.onloadeddata = () => loadingHint.style.display = 'none';
+            videoPlayer.onerror = () => {
                 videoPlayerContainer.innerHTML = `
                     <div class="w-full h-full flex flex-col items-center justify-center text-white p-8">
                         <i class="fa fa-exclamation-circle text-5xl mb-4 text-primary"></i>
                         <h4 class="text-2xl font-bold mb-2">视频加载失败</h4>
-                        <p class="text-gray-300 mb-6 text-center max-w-md">
-                            无法加载视频文件，请检查文件路径或网络连接
-                        </p>
-                        <button onclick="location.reload()" 
-                                class="bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors">
-                            <i class="fa fa-refresh mr-2"></i>刷新重试
-                        </button>
+                        <p class="text-gray-300 mb-6">请检查文件名或GitHub配置</p>
+                        <button onclick="location.reload()" class="bg-primary text-white px-6 py-2 rounded-lg">刷新重试</button>
                     </div>
                 `;
             };
@@ -674,91 +734,60 @@
         // 播放B站视频
         function openBilibiliVideo(bvId, title) {
             modalVideoTitle.textContent = title;
-            
-            // B站嵌入代码
             videoPlayerContainer.innerHTML = `
                 <div class="w-full h-full relative">
-                    <iframe 
-                        src="https://player.bilibili.com/player.html?bvid=${bvId}&page=1&high_quality=1&danmaku=0&autoplay=1" 
-                        scrolling="no" 
-                        border="0" 
-                        frameborder="no" 
-                        framespacing="0" 
-                        allowfullscreen="true"
-                        class="w-full h-full"
-                        id="bilibiliIframe">
-                    </iframe>
-                    <!-- 加载提示 -->
+                    <iframe src="https://player.bilibili.com/player.html?bvid=${bvId}&page=1&autoplay=1" 
+                            class="w-full h-full" allowfullscreen frameborder="0"></iframe>
                     <div id="bilibiliLoadingHint" class="absolute inset-0 bg-black/70 flex items-center justify-center text-white z-10">
                         <div class="text-center">
                             <i class="fa fa-spinner fa-spin text-4xl mb-4"></i>
                             <p>正在加载B站视频...</p>
-                            <p class="text-sm text-gray-300 mt-2">如果加载失败，将自动跳转到B站播放</p>
                         </div>
                     </div>
                 </div>
             `;
             
             videoModal.classList.remove('hidden');
+            closeVideoListModal();
             document.body.style.overflow = 'hidden';
             
-            // 监听iframe加载状态
-            const iframe = document.getElementById('bilibiliIframe');
+            const iframe = document.querySelector('#bilibiliIframe');
             const loadingHint = document.getElementById('bilibiliLoadingHint');
             
-            // 加载完成后隐藏提示
-            iframe.onload = function() {
-                loadingHint.style.display = 'none';
-            };
-            
-            // 超时处理（8秒），失败则提供跳转选项
+            iframe.onload = () => loadingHint.style.display = 'none';
             setTimeout(() => {
                 if (loadingHint.style.display !== 'none') {
                     videoPlayerContainer.innerHTML = `
                         <div class="w-full h-full flex flex-col items-center justify-center text-white p-8">
                             <i class="fa fa-exclamation-circle text-5xl mb-4 text-primary"></i>
-                            <h4 class="text-2xl font-bold mb-2">B站视频嵌入失败</h4>
-                            <p class="text-gray-300 mb-6 text-center max-w-md">
-                                可能是视频隐私设置限制导致无法嵌入播放
-                            </p>
-                            <div class="flex flex-col sm:flex-row gap-4">
-                                <a href="https://www.bilibili.com/video/${bvId}/" target="_blank" 
-                                   class="bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors">
-                                    <i class="fa fa-external-link mr-2"></i>在B站观看视频
-                                </a>
-                                <button onclick="closeVideoModal()" 
-                                        class="bg-white text-primary border border-primary px-8 py-3 rounded-lg hover:bg-primary/5 transition-colors">
-                                    <i class="fa fa-times mr-2"></i>关闭
-                                </button>
-                            </div>
+                            <h4 class="text-2xl font-bold mb-2">嵌入失败</h4>
+                            <p class="text-gray-300 mb-6">请在B站查看视频</p>
+                            <a href="https://www.bilibili.com/video/${bvId}/" target="_blank" class="bg-primary text-white px-6 py-2 rounded-lg">
+                                前往B站观看
+                            </a>
                         </div>
                     `;
                 }
             }, 8000);
         }
 
-        // 关闭视频模态框
+        // 关闭视频播放模态框
         function closeVideoModal() {
             videoModal.classList.add('hidden');
-            videoPlayerContainer.innerHTML = `
-                <video id="modalVideoPlayer" class="w-full h-full" controls autoplay>
-                    您的浏览器不支持HTML5视频播放
-                </video>
-            `;
+            videoPlayerContainer.innerHTML = `<video id="modalVideoPlayer" class="w-full h-full" controls autoplay></video>`;
             document.body.style.overflow = '';
         }
 
-        // 点击模态框背景关闭
+        // 点击背景关闭播放框
         videoModal.addEventListener('click', (e) => {
-            if (e.target === videoModal) {
-                closeVideoModal();
-            }
+            if (e.target === videoModal) closeVideoModal();
         });
-        
-        // ESC键关闭
+
+        // ESC键关闭所有模态框
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !videoModal.classList.contains('hidden')) {
+            if (e.key === 'Escape') {
                 closeVideoModal();
+                closeVideoListModal();
             }
         });
     </script>
